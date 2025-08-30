@@ -104,7 +104,6 @@ The API will be available at `http://localhost:8000` with automatic documentatio
 In a separate terminal:
 
 ```bash
-cd medical-services-chatbot
 streamlit run frontend.py --server.port 8501
 ```
 
