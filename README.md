@@ -16,22 +16,34 @@ A microservice-based chatbot system that answers questions about medical service
 ## Architecture
 
 ```
-├── app.py                     # FastAPI microservice
-├── frontend.py                # Streamlit chat interface
-├── services/
-│   ├── router.py             # Main chat routing logic
-│   ├── azure_client.py       # Azure OpenAI client
-│   ├── embedding_client.py   # Azure embeddings client
-│   ├── hybrid_retriever.py   # Semantic + keyword search
-│   ├── knowledge_base.py     # HTML parsing and data extraction
-│   ├── prompts.py           # System prompts and templates
-│   └── validators.py        # Input validation utilities
-├── utils/
-│   ├── i18n.py              # Language detection
-│   └── logging_config.py    # Logging configuration with PII masking
-├── build_kb_index.py        # Knowledge base indexing script
-├── phase2_data/             # HTML knowledge base files
-└── data/                    # Generated knowledge base index
+medical-services-chatbot/
+├── app.py                  # FastAPI backend service
+├── frontend.py             # Streamlit chat interface
+├── README.md               # Project documentation
+├── requirements.txt        # Dependencies
+├── .env.example            # Environment variables template
+├── services/               # Core backend services
+│   ├── azure_client.py     # Azure OpenAI client
+│   ├── embedding_client.py # Azure embeddings client
+│   ├── hybrid_retriever.py # Semantic + keyword retriever
+│   ├── knowledge_base.py   # HTML parsing and extraction
+│   ├── prompts.py          # Prompt templates
+│   ├── router.py           # Main chat routing logic
+│   └── validators.py       # Input validation
+├── utils/                  # Shared utilities
+│   ├── i18n.py             # Language detection
+│   └── logging_config.py   # Logging with PII masking
+├── data/                   # Generated knowledge base index
+│   └── kb_index.npz
+├── phase2_data/            # Raw HTML knowledge base files
+│   ├── alternative_services.html
+│   ├── communication_clinic_services.html
+│   ├── dentel_services.html
+│   ├── optometry_services.html
+│   ├── pragrency_services.html
+│   └── workshops_services.html
+└── scripts/                # Utility scripts
+    └── build_kb_index.py   # Knowledge base indexing script
 ```
 
 ## Prerequisites
